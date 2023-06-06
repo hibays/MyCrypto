@@ -105,8 +105,11 @@ class BlockCipher(Symmetric) :
 		elif self.mode == _CFB :
 			...
 			
-		elif self.more == _OFB :
+		elif self.mode == _OFB :
 			...
+
+		else :
+			raise ValueError('Unsupported mode: {}'.format(self.mode))
 		
 	def encrypt(self, data) :
 		return b''.join(self.itercrypt(data, self.encrypt_block))
