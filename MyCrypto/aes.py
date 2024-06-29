@@ -113,7 +113,7 @@ U4 = array('I', map(lambda i: i << 24 & 0xffffffff | i >> 8, U3))
 class AES(BlockCipher) :
 	__slots__ = ('K', 'iK', 'Nk', 'Nr') + BlockCipher.__slots__
 	
-	def __new__(cls, key, mode=BlockCipher.MODE_ECB, iv=bytes(16)) :
+	def __new__(cls, key: bytes, mode=BlockCipher.MODE_ECB, iv=bytes(16)) :
 		self = super().__new__(cls, mode, iv)
 		
 		if len(key) not in (16, 24, 32) :

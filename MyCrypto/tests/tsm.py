@@ -4,8 +4,10 @@ from base64 import (
 	b64encode as e64,
 	b85encode as e85,
 )
-from base94 import b94encode as e94
-from fmat.test import gt, gprint as print
+try :
+	from fmat.test import gt, gprint as print
+except :
+	...
 p = lambda s : 'Succeed!\n' if s else 'Failed!\n'
 e16 = b'%x'.__mod__
 
